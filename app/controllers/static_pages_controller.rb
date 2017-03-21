@@ -5,6 +5,7 @@ class StaticPagesController < ApplicationController
 			premise: params[:premise]
 			)
 		@idea.save
+		
 		session[:idea] = @idea.premise
 	end
 end
