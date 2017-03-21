@@ -5,7 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
 	has_many :groups
-	
+
+	has_many :ideas
+
 	has_many :user_expertise_associations
 	has_many :expertises, through: :user_expertise_associations
   # before_action :authenticate_user!
