@@ -4,9 +4,10 @@
 
 <div class="col-sm-6 col-sm-offset-3 input-group initial-question">
 
-	<%= form_for @idea, :html => {:class => "form-control initial-input-form"} do |f|  %>
-		<%= f.text_field :premise  %>
-		<%= f.submit 'GO', :class => "btn btn-default initial-button", :placeholder => "What's your idea?" %>
+
+	<%= form_tag '/ideas', :html => {:class => "form-control initial-input-form"} do |f|  %>
+		<%= text_field_tag :premise  %>
+		<%= submit_tag 'GO', :class => "btn btn-default initial-button", :placeholder => "What's your idea?" %>
 	<% end %>
 
 	<!-- <input type="text" class="form-control initial-input-form" placeholder="What's your idea?">

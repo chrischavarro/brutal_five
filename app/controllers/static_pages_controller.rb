@@ -1,11 +1,15 @@
 class StaticPagesController < ApplicationController
 	def home
+		# @idea = Idea.new(
+		# 	premise: params[:premise]
+		# 	)
 
-		@idea = Idea.new(
-			premise: params[:premise]
-			)
-		@idea.save
-		
-		session[:idea] = @idea.premise
+		# session[:idea] = @idea.premise
+
+	end
+
+	def ideas_test
+	    @question =  session[:idea]
+	    print @question
 	end
 end
