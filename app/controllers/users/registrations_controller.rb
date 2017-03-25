@@ -13,9 +13,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super do |resource|
+      @idea = Idea.new {
+        premise: session[:idea]
+      }
+      @idea.save 
+    end
+  end
 
   # GET /resource/edit
   # def edit
