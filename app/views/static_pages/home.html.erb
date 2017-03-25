@@ -4,17 +4,12 @@
 
 <div class="col-sm-6 col-sm-offset-3 input-group initial-question">
 
+<!-- , :class => "form-control initial-input-form" -->
+	<%= form_tag '/ideas' do |f|  %>
+		<%= text_field_tag :premise, nil , class: 'form-control initial-input-form', placeholder: "What's your idea?"  %>
 
-	<%= form_tag '/ideas', :html => {:class => "form-control initial-input-form"} do |f|  %>
-		<%= text_field_tag :premise  %>
-		<%= submit_tag 'GO', :class => "btn btn-default initial-button", :placeholder => "What's your idea?" %>
+		<%= submit_tag 'GO', :class => "btn btn-default initial-button" %>
 	<% end %>
-
-	<!-- <input type="text" class="form-control initial-input-form" placeholder="What's your idea?">
-	<span class="input-group-btn">
-		<button class="btn btn-default initial-button" type="button">GO</button>
-		<h3><%= link_to("Sign Up", new_user_registration_path)  %></h3>
-	</span> -->
 
 </div>
 

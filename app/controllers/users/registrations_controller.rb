@@ -1,16 +1,20 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 # before_action :configure_sign_up_params, only: [:create]
 # before_action :configure_account_update_params, only: [:update]
-  def new
-    # question = Idea.find_by(session[:idea])
-    # print question
-
-    print "Hello ther!"
-  end
-  # GET /resource/sign_up
   # def new
-  #   super
+
+  #   print "DIABETES IS A BITCH!"
   # end
+  # GET /resource/sign_up
+  def new
+    super do |resource|
+      @question = session[:idea]
+      @test = params[:user_question]
+      print @question
+      print @test
+
+    end
+  end
 
   # POST /resource
   # def create

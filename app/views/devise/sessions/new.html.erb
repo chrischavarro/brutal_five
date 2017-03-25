@@ -1,14 +1,50 @@
-<h2>Log in</h2>
+<div class="row centered">
+
+  <div class="col-sm-6 col-sm-offset-3">
+  <%= @question  %>
+    <h1>Log in</h1>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="field sign_up_form">
+        <%= f.label :email, class: "signup_text" %><br />
+        <%= f.email_field :email, autofocus: true, class: "sign_up" %>
+      </div>
+
+      <div class="field sign_up_form">
+        <%= f.label :password, class: "signup_text" %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "off", class: "sign_up" %>
+      </div>
+
+      <div class="field sign_up_form">
+        <%= f.label :password_confirmation, class: "signup_text" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: "sign_up" %>
+      </div>
+
+      <div class="actions sign_up_form">
+        <%= f.submit "Log in", class: "button" %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+    
+  </div>  
+</div>
+
+
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+  <div class="field sign_up_form">
+    <%= f.label :email, class: "signup_text" %><br />
+    <%= f.email_field :email, autofocus: true, class: "sign_up" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+  <div class="field sign_up_form">
+    <%= f.label :password, class: "signup_text" %><br />
+    <%= f.password_field :password, autocomplete: "off", class: "sign_up" %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
