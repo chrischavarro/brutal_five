@@ -9,10 +9,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def new
     super do |resource|
       @question = session[:idea]
-      @test = params[:user_question]
-      print @question
-      print @test
-
     end
   end
 
