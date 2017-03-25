@@ -2,14 +2,20 @@
 
   <div class="col-sm-6 col-sm-offset-3">
     <h1>Sign up</h1>
-      <%= @question  %>
+      <h3>Your kickass idea: </h3>
+      <h4><%= @question %></h4>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
 
       <div class="field sign_up_form">
+        <%= f.label :username, class: "signup_text" %><br>
+        <%= f.text_field :username, class: "sign_up", autofocus: true %>
+      </div>
+
+      <div class="field sign_up_form">
         <%= f.label :email, class: "signup_text" %><br />
-        <%= f.email_field :email, autofocus: true, class: "sign_up" %>
+        <%= f.email_field :email, class: "sign_up" %>
       </div>
 
       <div class="field sign_up_form">
