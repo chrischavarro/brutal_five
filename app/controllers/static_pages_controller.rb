@@ -13,6 +13,9 @@ class StaticPagesController < ApplicationController
 	end
 
 	def dashboard
+		if user_has_profile
+			redirect_to new_profile_path
+		end
 		@user = current_user
 	end
 
