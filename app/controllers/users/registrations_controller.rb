@@ -15,9 +15,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super do |resource|
-      @idea = Idea.new {
-        premise: session[:idea]
-      }
+      premise = session[:idea]
+      @idea = Idea.new(
+        premise: premise,
+        user_id: User.last.id
+      )
       @idea.save 
     end
   end
