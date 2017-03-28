@@ -16,6 +16,7 @@ gem 'font-awesome-sass'
 gem 'omniauth-linkedin-oauth2'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+gem 'react_webpack_rails'
 
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets

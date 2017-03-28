@@ -5,10 +5,10 @@
 <!-- 4. PROFIT -->
 
 <div class="row">
+	<div class="idea col-sm-4 col-sm-offset-4">
+		<h3><%= @idea.premise  %>?</h3>
+	</div>
 	<div class="col-sm-10 col-sm-offset-1"> 
-		<div class="idea col-sm-2">
-			<h3><%= @idea.premise  %>?</h3>
-		</div>
 		<h3>That's a pretty sick idea, <%= @user.username  %></h3>
 		<%= form_for @profile do |f| %>
 			<div class="dropdown">
@@ -24,7 +24,7 @@
 			    <li><a href="#">Separated link</a></li>
 			  </ul>
 			</div>
-			
+
 		<% end %>
 	</div>
 </div>
