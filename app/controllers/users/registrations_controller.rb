@@ -21,6 +21,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         user_id: User.last.id
       )
       @idea.save 
+      destroy_idea_session 
     end
   end
 
